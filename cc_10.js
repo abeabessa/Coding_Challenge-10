@@ -1,4 +1,5 @@
 cc_10.js
+
 document.addEventListener("DOMContentLoaded", () => {
     const priceDisplay = document.getElementById("product-price");
     const sizeDropdown = document.getElementById("size-options");
@@ -10,28 +11,28 @@ document.addEventListener("DOMContentLoaded", () => {
         medium: 12.5,
         large: 15.0
     };
-   // Availability mapping based on size
-   const availabilityMap = {
-    small: true,
-    medium: true,
-    large: false // Large is out of stock
-};
 
-// Function to update price and button availability
-function updateProductDetails() {
-    const selectedSize = sizeDropdown.value;
-    // Update the price display based on the selected size
-    priceDisplay.textContent = "$" + {priceMap[selectedSize].toFixed(2)}`;
-    // Enable or disable the purchase button based on stock availability
-    purchaseButton.disabled = !availabilityMap[selectedSize];
-}
+    // Availability mapping based on size
+    const availabilityMap = {
+        small: true,
+        medium: true,
+        large: false // Large is out of stock
+    };
 
-// Initialize the product details when the page loads
-updateProductDetails();
+    // Function to update price and button availability
+    function updateProductDetails() {
+        const selectedSize = sizeDropdown.value;
+        // Update the price display based on the selected size
+        priceDisplay.textContent = "$" + priceMap[selectedSize].toFixed(2);
+        // Enable or disable the purchase button based on stock availability
+        purchaseButton.disabled = !availabilityMap[selectedSize];
+    }
 
-// Event listener for size dropdown changes
-sizeDropdown.addEventListener("change", updateProductDetails);
+    // Initialize the product details when the page loads
+    updateProductDetails();
 
+    // Event listener for size dropdown changes
+    sizeDropdown.addEventListener("change", updateProductDetails);
 
     // Event listener for the purchase button
     purchaseButton.addEventListener("click", () => {
