@@ -1,5 +1,4 @@
 cc_10.js
-
 document.addEventListener("DOMContentLoaded", () => {
     const priceDisplay = document.getElementById("product-price");
     const sizeDropdown = document.getElementById("size-options");
@@ -10,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         small: 10.0,
         medium: 12.5,
         large: 15.0
-    };  
+    };
    // Availability mapping based on size
    const availabilityMap = {
     small: true,
@@ -22,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function updateProductDetails() {
     const selectedSize = sizeDropdown.value;
     // Update the price display based on the selected size
-    priceDisplay.textContent = "$" + priceMap[selectedSize].toFixed(2);
+    priceDisplay.textContent = "$" + {priceMap[selectedSize].toFixed(2)}`;
     // Enable or disable the purchase button based on stock availability
     purchaseButton.disabled = !availabilityMap[selectedSize];
 }
