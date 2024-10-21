@@ -11,3 +11,18 @@ document.addEventListener("DOMContentLoaded", () => {
         medium: 12.5,
         large: 15.0
     };  
+   // Availability mapping based on size
+   const availabilityMap = {
+    small: true,
+    medium: true,
+    large: false // Large is out of stock
+};
+
+// Function to update price and button availability
+function updateProductDetails() {
+    const selectedSize = sizeDropdown.value;
+    // Update the price display based on the selected size
+    priceDisplay.textContent = "$" + priceMap[selectedSize].toFixed(2);
+    // Enable or disable the purchase button based on stock availability
+    purchaseButton.disabled = !availabilityMap[selectedSize];
+}
