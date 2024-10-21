@@ -25,3 +25,9 @@ function updateProductDetails() {
     // Enable or disable the purchase button based on stock availability
     purchaseButton.disabled = !availabilityMap[selectedSize];
 }
+
+// Initialize the product details when the page loads
+updateProductDetails();
+
+// Event listener for size dropdown changes
+sizeDropdown.addEventListener("change", updateProductDetails);
