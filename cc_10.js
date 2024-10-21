@@ -31,3 +31,15 @@ updateProductDetails();
 
 // Event listener for size dropdown changes
 sizeDropdown.addEventListener("change", updateProductDetails);
+
+
+    // Event listener for the purchase button
+    purchaseButton.addEventListener("click", () => {
+        const selectedSize = sizeDropdown.value;
+        if (availabilityMap[selectedSize]) {
+            alert("Purchase successful!");
+        } else {
+            alert("This product is out of stock.");
+        }
+    });
+});
